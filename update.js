@@ -29,6 +29,8 @@ async function checkForUpdates() {
           const update = confirm("A new version is available. Reload?");
 
           if (update) {
+            localStorage.setItem("savedSha", sha);
+
             if ("caches" in window) {
               const cacheNames = await caches.keys();
               await Promise.all(cacheNames.map((name) => caches.delete(name)));
