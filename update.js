@@ -1,3 +1,8 @@
+/*
+Written by Alia
+Optimised using ChatGPT
+*/
+
 async function checkForUpdates() {
   const savedSha = localStorage.getItem("savedSha");
   const currentUrl = new URL(location.href);
@@ -22,8 +27,13 @@ async function checkForUpdates() {
           localStorage.setItem("savedSha", sha);
         } else if (sha !== savedSha) {
           const update = confirm("A new version is available. Reload?");
+
           if (update) {
-            clearCacheAndReload();
+            if ("caches" in window) {
+              const cacheNames = await caches.keys();
+              await Promise.all(cacheNames.map((name) => caches.delete(name)));
+            }
+            window.location.reload();
           }
         }
       } else {
@@ -33,14 +43,6 @@ async function checkForUpdates() {
       console.error("Error checking for updates:", error);
     }
   }
-}
-
-async function clearCacheAndReload() {
-  if ("caches" in window) {
-    const cacheNames = await caches.keys();
-    await Promise.all(cacheNames.map((name) => caches.delete(name)));
-  }
-  window.location.reload();
 }
 
 checkForUpdates();
