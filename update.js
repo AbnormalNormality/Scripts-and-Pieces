@@ -4,7 +4,9 @@ Optimised using ChatGPT
 */
 
 async function checkForUpdates() {
-  const savedSha = localStorage.getItem("savedSha");
+  const updateIdKey = "savedSha";
+  
+  const savedSha = localStorage.getItem(updateIdKey);
   const currentUrl = new URL(location.href);
 
   const hostname = currentUrl.hostname;
@@ -30,7 +32,7 @@ async function checkForUpdates() {
           update = confirm("A new version is available. Reload?");
 
         if (update) {
-          localStorage.setItem("savedSha", sha);
+          localStorage.setItem(updateIdKey, sha);
           update();
         }
       } else {
