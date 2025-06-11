@@ -4,7 +4,9 @@ Optimised using ChatGPT
 */
 
 async function checkForUpdates() {
-  const savedSha = localStorage.getItem("savedSha");
+  const updateIdKey = "savedSha";
+  
+  const savedSha = localStorage.getItem(updateIdKey);
   const currentUrl = new URL(location.href);
 
   const hostname = currentUrl.hostname;
@@ -22,21 +24,16 @@ async function checkForUpdates() {
 
       if ("sha" in data) {
         const sha = data.sha;
+        let update = false;
 
-        if (!savedSha) {
-          localStorage.setItem("savedSha", sha);
-        } else if (sha !== savedSha) {
-          const update = confirm("A new version is available. Reload?");
+        if (!savedSha)
+          update = confirm("There may be a new version available. Reload?");
+        else if (sha !== savedSha)
+          update = confirm("A new version is available. Reload?");
 
-          if (update) {
-            localStorage.setItem("savedSha", sha);
-
-            if ("caches" in window) {
-              const cacheNames = await caches.keys();
-              await Promise.all(cacheNames.map((name) => caches.delete(name)));
-            }
-            window.location.reload();
-          }
+        if (update) {
+          localStorage.setItem(updateIdKey, sha);
+          update();
         }
       } else {
         console.error("Unexpected API response:", data);
@@ -45,6 +42,14 @@ async function checkForUpdates() {
       console.error("Error checking for updates:", error);
     }
   }
+}
+
+async function update() {
+  if ("caches" in window) {
+    const cacheNames = await caches.keys();
+    await Promise.all(cacheNames.map((name) => caches.delete(name)));
+  }
+  window.location.reload();
 }
 
 checkForUpdates();
