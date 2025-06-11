@@ -1,0 +1,59 @@
+:root {
+  --tc-font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+[tc-theme="light"] {
+  --tc-background: #f0f0f0;
+  --tc-text: #000;
+  --tc-border: #ccc;
+}
+
+[tc-theme="dark"] {
+  --tc-background: #444;
+  --tc-text: #fff;
+  --tc-border: #888;
+}
+
+#theme-control {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  inset: 10px 10px auto auto;
+  position: fixed;
+  border-radius: 5px;
+  background-color: var(--tc-background);
+  border: 1px solid var(--tc-border);
+  align-items: center;
+  width: fit-content;
+  font-size: min(2vh, 3vw);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#theme-control, #theme-control * {
+  transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+#theme-select, #theme-select > option, label {
+  color: var(--tc-text);
+  font-family: var(--tc-font-family);
+  background-color: var(--tc-background);
+}
+
+#theme-select {
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+#theme-select:focus-visible {
+  outline: none;
+}
+
+#theme-select > option {
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+label {
+  font-size: 1em;
+}
