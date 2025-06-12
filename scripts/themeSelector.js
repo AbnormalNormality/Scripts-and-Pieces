@@ -110,7 +110,7 @@ class ThemeSelector {
     document.documentElement.setAttribute("ts-theme", theme);
     localStorage.setItem(this.localstoragekey, this.currentTheme);
 
-    document.querySelectorAll("[tc-only]").forEach((el) => {
+    document.querySelectorAll("[ts-only]").forEach((el) => {
       try {
         const themes = JSON.parse(el.getAttribute("tc-only"));
         if (themes.includes(theme)) {
