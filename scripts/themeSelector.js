@@ -112,7 +112,7 @@ class ThemeSelector {
 
     document.querySelectorAll("[ts-only]").forEach((el) => {
       try {
-        const themes = JSON.parse(el.getAttribute("tc-only"));
+        const themes = JSON.parse(el.getAttribute("ts-only"));
         if (themes.includes(theme)) {
           el.style.display = "";
         } else {
