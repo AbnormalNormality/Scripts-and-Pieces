@@ -49,6 +49,7 @@ class ThemeSelector {
 
   constructor() {
     this.currentTheme = localStorage.getItem(this.localstoragekey) || "auto";
+    this.applyTheme();
 
     document.addEventListener("DOMContentLoaded", () => {
       if (!this.themes.find((t) => t.value === this.currentTheme))
