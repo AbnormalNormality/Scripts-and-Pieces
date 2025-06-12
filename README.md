@@ -16,9 +16,9 @@ Adds a small box to the top right of the screen to choose a theme, by default li
 The theme chosen can be used to modify css and js:
 
 ```
-[tc-theme="dark"] {
+[ts-theme="dark"] {
   --background: #444;
 }
 ```
 
-You can also add `tc-only='["theme1", "theme2", ...]'` to an element to make it only display in certain themes.
+You can also add `ts-only='["theme1", "theme2", ...]'` to an element to make it only display in certain themes.
