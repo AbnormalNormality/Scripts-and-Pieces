@@ -5,7 +5,7 @@ Optimised using ChatGPT
 
 async function checkForUpdates() {
   const updateIdKey = "savedSha";
-  
+
   const savedSha = localStorage.getItem(updateIdKey);
   const currentUrl = new URL(location.href);
 
@@ -33,7 +33,7 @@ async function checkForUpdates() {
 
         if (update) {
           localStorage.setItem(updateIdKey, sha);
-          update();
+          doUpdate();
         }
       } else {
         console.error("Unexpected API response:", data);
@@ -44,7 +44,7 @@ async function checkForUpdates() {
   }
 }
 
-async function update() {
+async function doUpdate() {
   if ("caches" in window) {
     const cacheNames = await caches.keys();
     await Promise.all(cacheNames.map((name) => caches.delete(name)));
