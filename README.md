@@ -22,3 +22,9 @@ The theme chosen can be used to modify css and js:
 ```
 
 You can also add `ts-only='["theme1", "theme2", ...]'` to an element to make it only display in certain themes.
+
+### utilities.js
+
+- https://abnormalnormality.github.io/Scripts-and-Pieces/scripts/utilities.js
+
+Currently only includes `JSONLoad(path)` for reading a JSON file.
