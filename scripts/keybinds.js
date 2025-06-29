@@ -1,4 +1,5 @@
 export function openRepository() {
+  const currentUrl = new URL(location.href);
   const hostname = currentUrl.hostname;
   const pathParts = currentUrl.pathname.split("/").filter(Boolean);
 
