@@ -28,3 +28,15 @@ You can also add `ts-only='["theme1", "theme2", ...]'` to an element to make it 
 - https://abnormalnormality.github.io/Scripts-and-Pieces/scripts/utilities.js
 
 Currently only includes `JSONLoad(path)` for reading a JSON file.
+
+`removeFromArray(array, item)`: Removes an item from an array (only removes the first instance).
+
+`trackPressedKeys(returnListeners)`: Returns a dictionary with the keys pressed, limited by browser. `returnListeners = true` returns the keydown and keyup listeners as well.
+
+`trackMousePosition(returnListener)`: Returns a dictionary with the x and y coordinates of the mouse. `returnListener = true` returns the mousemove listeners as well.
+
+### utilities.js
+
+- https://abnormalnormality.github.io/Scripts-and-Pieces/scripts/keybinds.js
+
+`Alt+g`: Open current website's GitHub repository (only works on *.github.io websites)

@@ -1,8 +1,3 @@
-/*
-Written by Alia
-Optimised using ChatGPT
-*/
-
 async function checkForUpdates() {
   const updateIdKey = "savedSha";
 
