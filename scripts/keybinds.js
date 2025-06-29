@@ -10,5 +10,5 @@ export function openRepository() {
 }
 
 export const keybindListener = document.addEventListener("keyup", (event) => {
-  if (event.altKey && event.code === "KeyG") openRepository;
+  if (event.altKey && event.code === "KeyG") openRepository();
 });
