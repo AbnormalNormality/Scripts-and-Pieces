@@ -35,7 +35,7 @@ Currently only includes `JSONLoad(path)` for reading a JSON file.
 
 `trackMousePosition(returnListener)`: Returns a dictionary with the x and y coordinates of the mouse. `returnListener = true` returns the mousemove listeners as well.
 
-### utilities.js
+### keybinds.js
 
 - https://abnormalnormality.github.io/Scripts-and-Pieces/scripts/keybinds.js
 
