@@ -40,3 +40,14 @@ Currently only includes `JSONLoad(path)` for reading a JSON file.
 - https://abnormalnormality.github.io/Scripts-and-Pieces/scripts/keybinds.js
 
 `Alt+g`: Open current website's GitHub repository (only works on *.github.io websites)
+
+### ts.js
+
+- https://abnormalnormality.github.io/Scripts-and-Pieces/scripts/ts.js
+
+```
+<script type="text/typescript" src="src/scripts/main.ts"></script>
+<script type="module" src="src/scripts/ts.js"></script>
+```
+
+Let's you use TS (limited).
