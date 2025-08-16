@@ -9,7 +9,7 @@ async function checkForUpdates() {
 
   if (hostname.endsWith(".github.io")) {
     const username = hostname.split(".")[0];
-    const repo = pathParts.length > 0 ? pathParts[0] : username;
+    const repo = pathParts.length > 0 ? pathParts[0] : hostname;
 
     const commitUrl = `https://api.github.com/repos/${username}/${repo}/commits/main`;
 
